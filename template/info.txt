@@ -1,0 +1,37 @@
+School management system - Dashboard only
+
+Dashboard
+ - total teacher & student
+
+Teachers
+- list
+- add
+  - id
+  - name
+  - occupation
+  - email
+  - contact
+  - father & mother name
+  - family contact number
+  - present & permanent address
+
+- edit
+- delete
+
+Students
+- list
+- add
+  - id
+  - name
+  - roll
+  - email
+  - contact
+  - father & mother name
+  - family contact number
+  - present & permanent address
+  - admission date
+  - passing year
+  - cgpa
+- edit
+- delete
+
