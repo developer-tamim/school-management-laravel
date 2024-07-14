@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SchoolDashboard;
+use App\Http\Controllers\TeachersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -31,4 +32,9 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('school_dashboard',[SchoolDashboard::class, 'index'])->name('school.dashboard');
+// Route::get('school_dashboard',[SchoolDashboard::class, 'index'])->name('school.dashboard');
+Route::get('/',[SchoolDashboard::class, 'index'])->name('school.dashboard');
+
+
+// Teacher routes
+Route::get('teachers',[TeachersController::class, 'index'])->name('teacher.index');

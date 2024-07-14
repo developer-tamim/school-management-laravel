@@ -9,6 +9,8 @@ Teachers
   - id
   - name
   - occupation
+  - date of birth
+  - NID number
   - email
   - contact
   - father & mother name
@@ -24,6 +26,7 @@ Students
   - id
   - name
   - roll
+  - date of birth
   - email
   - contact
   - father & mother name
