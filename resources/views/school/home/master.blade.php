@@ -40,11 +40,8 @@
                     <ul>
                         <div class="logo"><a href="index.html"><!-- <img src="assets/images/logo.png" alt="" /> --><span>Focus</span></a></div>
                         <li class="label">Main</li>
-                        <li class="active"><a class="sidebar-sub-toggle"><i class="ti-home"></i> Dashboard <span class="badge badge-primary">2</span> <span class="sidebar-collapse-icon ti-angle-down"></span></a>
-                            <ul>
-                                <li><a href="index.html">Dashboard 1</a></li>
-                                <li><a href="index1.html">Dashboard 2</a></li>
-                            </ul>
+                        <li class="active"><a class="sidebar-sub-toggle"><i class="ti-home"></i> Dashboard</a>
+
                         </li>
 
                         <li class="label">Apps</li>
@@ -82,7 +79,7 @@
                         <li><a class="sidebar-sub-toggle"><i class="ti-panel"></i> Components <span class="sidebar-collapse-icon ti-angle-down"></span></a>
                             <ul>
                                 <li><a href="uc-calendar.html">Calendar</a></li>
-                                <li><a href="uc-carousel.html">Carousel</a></li>
+                               <li><a href="uc-carousel.html">Carousel</a></li>
                                 <li><a href="uc-weather.html">Weather</a></li>
                                 <li><a href="uc-datamap.html">Datamap</a></li>
                                 <li><a href="uc-todo-list.html">To do</a></li>
