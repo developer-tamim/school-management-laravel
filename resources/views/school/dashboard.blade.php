@@ -1,624 +1,700 @@
 @extends('school.home.master')
 @section('content')
-<div class="page-inner">
-    <div
-      class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4"
-    >
-      <div>
-        <h3 class="fw-bold mb-3">Dashboard</h3>
-        <h6 class="op-7 mb-2">Free Bootstrap 5 Admin Dashboard</h6>
-      </div>
-      <div class="ms-md-auto py-2 py-md-0">
-        <a href="#" class="btn btn-label-info btn-round me-2">Manage</a>
-        <a href="#" class="btn btn-primary btn-round">Add Customer</a>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-6 col-md-3">
-        <div class="card card-stats card-round">
-          <div class="card-body">
-            <div class="row align-items-center">
-              <div class="col-icon">
-                <div
-                  class="icon-big text-center icon-primary bubble-shadow-small"
-                >
-                  <i class="fas fa-users"></i>
-                </div>
-              </div>
-              <div class="col col-stats ms-3 ms-sm-0">
-                <div class="numbers">
-                  <p class="card-category">Visitors</p>
-                  <h4 class="card-title">1,294</h4>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-3">
-        <div class="card card-stats card-round">
-          <div class="card-body">
-            <div class="row align-items-center">
-              <div class="col-icon">
-                <div
-                  class="icon-big text-center icon-info bubble-shadow-small"
-                >
-                  <i class="fas fa-user-check"></i>
-                </div>
-              </div>
-              <div class="col col-stats ms-3 ms-sm-0">
-                <div class="numbers">
-                  <p class="card-category">Subscribers</p>
-                  <h4 class="card-title">1303</h4>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-3">
-        <div class="card card-stats card-round">
-          <div class="card-body">
-            <div class="row align-items-center">
-              <div class="col-icon">
-                <div
-                  class="icon-big text-center icon-success bubble-shadow-small"
-                >
-                  <i class="fas fa-luggage-cart"></i>
-                </div>
-              </div>
-              <div class="col col-stats ms-3 ms-sm-0">
-                <div class="numbers">
-                  <p class="card-category">Sales</p>
-                  <h4 class="card-title">$ 1,345</h4>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-3">
-        <div class="card card-stats card-round">
-          <div class="card-body">
-            <div class="row align-items-center">
-              <div class="col-icon">
-                <div
-                  class="icon-big text-center icon-secondary bubble-shadow-small"
-                >
-                  <i class="far fa-check-circle"></i>
-                </div>
-              </div>
-              <div class="col col-stats ms-3 ms-sm-0">
-                <div class="numbers">
-                  <p class="card-category">Order</p>
-                  <h4 class="card-title">576</h4>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-8">
-        <div class="card card-round">
-          <div class="card-header">
-            <div class="card-head-row">
-              <div class="card-title">User Statistics</div>
-              <div class="card-tools">
-                <a
-                  href="#"
-                  class="btn btn-label-success btn-round btn-sm me-2"
-                >
-                  <span class="btn-label">
-                    <i class="fa fa-pencil"></i>
-                  </span>
-                  Export
-                </a>
-                <a href="#" class="btn btn-label-info btn-round btn-sm">
-                  <span class="btn-label">
-                    <i class="fa fa-print"></i>
-                  </span>
-                  Print
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="card-body">
-            <div class="chart-container" style="min-height: 375px">
-              <canvas id="statisticsChart"></canvas>
-            </div>
-            <div id="myChartLegend"></div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card card-primary card-round">
-          <div class="card-header">
-            <div class="card-head-row">
-              <div class="card-title">Daily Sales</div>
-              <div class="card-tools">
-                <div class="dropdown">
-                  <button
-                    class="btn btn-sm btn-label-light dropdown-toggle"
-                    type="button"
-                    id="dropdownMenuButton"
-                    data-bs-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                  >
-                    Export
-                  </button>
-                  <div
-                    class="dropdown-menu"
-                    aria-labelledby="dropdownMenuButton"
-                  >
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#"
-                      >Something else here</a
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="card-category">March 25 - April 02</div>
-          </div>
-          <div class="card-body pb-0">
-            <div class="mb-4 mt-2">
-              <h1>$4,578.58</h1>
-            </div>
-            <div class="pull-in">
-              <canvas id="dailySalesChart"></canvas>
-            </div>
-          </div>
-        </div>
-        <div class="card card-round">
-          <div class="card-body pb-0">
-            <div class="h1 fw-bold float-end text-primary">+5%</div>
-            <h2 class="mb-2">17</h2>
-            <p class="text-muted">Users online</p>
-            <div class="pull-in sparkline-fix">
-              <div id="lineChart"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="card card-round">
-          <div class="card-header">
-            <div class="card-head-row card-tools-still-right">
-              <h4 class="card-title">Users Geolocation</h4>
-              <div class="card-tools">
-                <button
-                  class="btn btn-icon btn-link btn-primary btn-xs"
-                >
-                  <span class="fa fa-angle-down"></span>
-                </button>
-                <button
-                  class="btn btn-icon btn-link btn-primary btn-xs btn-refresh-card"
-                >
-                  <span class="fa fa-sync-alt"></span>
-                </button>
-                <button
-                  class="btn btn-icon btn-link btn-primary btn-xs"
-                >
-                  <span class="fa fa-times"></span>
-                </button>
-              </div>
-            </div>
-            <p class="card-category">
-              Map of the distribution of users around the world
-            </p>
-          </div>
-          <div class="card-body">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="table-responsive table-hover table-sales">
-                  <table class="table">
-                    <tbody>
-                      <tr>
-                        <td>
-                          <div class="flag">
-                            <img
-                              src="assets/img/flags/id.png"
-                              alt="indonesia"
-                            />
-                          </div>
-                        </td>
-                        <td>Indonesia</td>
-                        <td class="text-end">2.320</td>
-                        <td class="text-end">42.18%</td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="flag">
-                            <img
-                              src="assets/img/flags/us.png"
-                              alt="united states"
-                            />
-                          </div>
-                        </td>
-                        <td>USA</td>
-                        <td class="text-end">240</td>
-                        <td class="text-end">4.36%</td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="flag">
-                            <img
-                              src="assets/img/flags/au.png"
-                              alt="australia"
-                            />
-                          </div>
-                        </td>
-                        <td>Australia</td>
-                        <td class="text-end">119</td>
-                        <td class="text-end">2.16%</td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="flag">
-                            <img
-                              src="assets/img/flags/ru.png"
-                              alt="russia"
-                            />
-                          </div>
-                        </td>
-                        <td>Russia</td>
-                        <td class="text-end">1.081</td>
-                        <td class="text-end">19.65%</td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="flag">
-                            <img
-                              src="assets/img/flags/cn.png"
-                              alt="china"
-                            />
-                          </div>
-                        </td>
-                        <td>China</td>
-                        <td class="text-end">1.100</td>
-                        <td class="text-end">20%</td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="flag">
-                            <img
-                              src="assets/img/flags/br.png"
-                              alt="brazil"
-                            />
-                          </div>
-                        </td>
-                        <td>Brasil</td>
-                        <td class="text-end">640</td>
-                        <td class="text-end">11.63%</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="mapcontainer">
-                  <div
-                    id="world-map"
-                    class="w-100"
-                    style="height: 300px"
-                  ></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-4">
-        <div class="card card-round">
-          <div class="card-body">
-            <div class="card-head-row card-tools-still-right">
-              <div class="card-title">New Customers</div>
-              <div class="card-tools">
-                <div class="dropdown">
-                  <button
-                    class="btn btn-icon btn-clean me-0"
-                    type="button"
-                    id="dropdownMenuButton"
-                    data-bs-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                  >
-                    <i class="fas fa-ellipsis-h"></i>
-                  </button>
-                  <div
-                    class="dropdown-menu"
-                    aria-labelledby="dropdownMenuButton"
-                  >
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#"
-                      >Something else here</a
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="card-list py-4">
-              <div class="item-list">
-                <div class="avatar">
-                  <img
-                    src="assets/img/jm_denis.jpg"
-                    alt="..."
-                    class="avatar-img rounded-circle"
-                  />
-                </div>
-                <div class="info-user ms-3">
-                  <div class="username">Jimmy Denis</div>
-                  <div class="status">Graphic Designer</div>
-                </div>
-                <button class="btn btn-icon btn-link op-8 me-1">
-                  <i class="far fa-envelope"></i>
-                </button>
-                <button class="btn btn-icon btn-link btn-danger op-8">
-                  <i class="fas fa-ban"></i>
-                </button>
-              </div>
-              <div class="item-list">
-                <div class="avatar">
-                  <span
-                    class="avatar-title rounded-circle border border-white"
-                    >CF</span
-                  >
-                </div>
-                <div class="info-user ms-3">
-                  <div class="username">Chandra Felix</div>
-                  <div class="status">Sales Promotion</div>
-                </div>
-                <button class="btn btn-icon btn-link op-8 me-1">
-                  <i class="far fa-envelope"></i>
-                </button>
-                <button class="btn btn-icon btn-link btn-danger op-8">
-                  <i class="fas fa-ban"></i>
-                </button>
-              </div>
-              <div class="item-list">
-                <div class="avatar">
-                  <img
-                    src="assets/img/talha.jpg"
-                    alt="..."
-                    class="avatar-img rounded-circle"
-                  />
-                </div>
-                <div class="info-user ms-3">
-                  <div class="username">Talha</div>
-                  <div class="status">Front End Designer</div>
-                </div>
-                <button class="btn btn-icon btn-link op-8 me-1">
-                  <i class="far fa-envelope"></i>
-                </button>
-                <button class="btn btn-icon btn-link btn-danger op-8">
-                  <i class="fas fa-ban"></i>
-                </button>
-              </div>
-              <div class="item-list">
-                <div class="avatar">
-                  <img
-                    src="assets/img/chadengle.jpg"
-                    alt="..."
-                    class="avatar-img rounded-circle"
-                  />
-                </div>
-                <div class="info-user ms-3">
-                  <div class="username">Chad</div>
-                  <div class="status">CEO Zeleaf</div>
-                </div>
-                <button class="btn btn-icon btn-link op-8 me-1">
-                  <i class="far fa-envelope"></i>
-                </button>
-                <button class="btn btn-icon btn-link btn-danger op-8">
-                  <i class="fas fa-ban"></i>
-                </button>
-              </div>
-              <div class="item-list">
-                <div class="avatar">
-                  <span
-                    class="avatar-title rounded-circle border border-white bg-primary"
-                    >H</span
-                  >
-                </div>
-                <div class="info-user ms-3">
-                  <div class="username">Hizrian</div>
-                  <div class="status">Web Designer</div>
-                </div>
-                <button class="btn btn-icon btn-link op-8 me-1">
-                  <i class="far fa-envelope"></i>
-                </button>
-                <button class="btn btn-icon btn-link btn-danger op-8">
-                  <i class="fas fa-ban"></i>
-                </button>
-              </div>
-              <div class="item-list">
-                <div class="avatar">
-                  <span
-                    class="avatar-title rounded-circle border border-white bg-secondary"
-                    >F</span
-                  >
-                </div>
-                <div class="info-user ms-3">
-                  <div class="username">Farrah</div>
-                  <div class="status">Marketing</div>
-                </div>
-                <button class="btn btn-icon btn-link op-8 me-1">
-                  <i class="far fa-envelope"></i>
-                </button>
-                <button class="btn btn-icon btn-link btn-danger op-8">
-                  <i class="fas fa-ban"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-8">
-        <div class="card card-round">
-          <div class="card-header">
-            <div class="card-head-row card-tools-still-right">
-              <div class="card-title">Transaction History</div>
-              <div class="card-tools">
-                <div class="dropdown">
-                  <button
-                    class="btn btn-icon btn-clean me-0"
-                    type="button"
-                    id="dropdownMenuButton"
-                    data-bs-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                  >
-                    <i class="fas fa-ellipsis-h"></i>
-                  </button>
-                  <div
-                    class="dropdown-menu"
-                    aria-labelledby="dropdownMenuButton"
-                  >
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#"
-                      >Something else here</a
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card-body p-0">
-            <div class="table-responsive">
-              <!-- Projects table -->
-              <table class="table align-items-center mb-0">
-                <thead class="thead-light">
-                  <tr>
-                    <th scope="col">Payment Number</th>
-                    <th scope="col" class="text-end">Date & Time</th>
-                    <th scope="col" class="text-end">Amount</th>
-                    <th scope="col" class="text-end">Status</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">
-                      <button
-                        class="btn btn-icon btn-round btn-success btn-sm me-2"
-                      >
-                        <i class="fa fa-check"></i>
-                      </button>
-                      Payment from #10231
-                    </th>
-                    <td class="text-end">Mar 19, 2020, 2.45pm</td>
-                    <td class="text-end">$250.00</td>
-                    <td class="text-end">
-                      <span class="badge badge-success">Completed</span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      <button
-                        class="btn btn-icon btn-round btn-success btn-sm me-2"
-                      >
-                        <i class="fa fa-check"></i>
-                      </button>
-                      Payment from #10231
-                    </th>
-                    <td class="text-end">Mar 19, 2020, 2.45pm</td>
-                    <td class="text-end">$250.00</td>
-                    <td class="text-end">
-                      <span class="badge badge-success">Completed</span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      <button
-                        class="btn btn-icon btn-round btn-success btn-sm me-2"
-                      >
-                        <i class="fa fa-check"></i>
-                      </button>
-                      Payment from #10231
-                    </th>
-                    <td class="text-end">Mar 19, 2020, 2.45pm</td>
-                    <td class="text-end">$250.00</td>
-                    <td class="text-end">
-                      <span class="badge badge-success">Completed</span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      <button
-                        class="btn btn-icon btn-round btn-success btn-sm me-2"
-                      >
-                        <i class="fa fa-check"></i>
-                      </button>
-                      Payment from #10231
-                    </th>
-                    <td class="text-end">Mar 19, 2020, 2.45pm</td>
-                    <td class="text-end">$250.00</td>
-                    <td class="text-end">
-                      <span class="badge badge-success">Completed</span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      <button
-                        class="btn btn-icon btn-round btn-success btn-sm me-2"
-                      >
-                        <i class="fa fa-check"></i>
-                      </button>
-                      Payment from #10231
-                    </th>
-                    <td class="text-end">Mar 19, 2020, 2.45pm</td>
-                    <td class="text-end">$250.00</td>
-                    <td class="text-end">
-                      <span class="badge badge-success">Completed</span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      <button
-                        class="btn btn-icon btn-round btn-success btn-sm me-2"
-                      >
-                        <i class="fa fa-check"></i>
-                      </button>
-                      Payment from #10231
-                    </th>
-                    <td class="text-end">Mar 19, 2020, 2.45pm</td>
-                    <td class="text-end">$250.00</td>
-                    <td class="text-end">
-                      <span class="badge badge-success">Completed</span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      <button
-                        class="btn btn-icon btn-round btn-success btn-sm me-2"
-                      >
-                        <i class="fa fa-check"></i>
-                      </button>
-                      Payment from #10231
-                    </th>
-                    <td class="text-end">Mar 19, 2020, 2.45pm</td>
-                    <td class="text-end">$250.00</td>
-                    <td class="text-end">
-                      <span class="badge badge-success">Completed</span>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
+<div class="content-wrap">
+    <div class="main">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-8 p-r-0 title-margin-right">
+                    <div class="page-header">
+                        <div class="page-title">
+                            <h1>Hello, <span>Welcome Here</span></h1>
+                        </div>
+                    </div>
+                </div>
+                <!-- /# column -->
+                <div class="col-lg-4 p-l-0 title-margin-left">
+                    <div class="page-header">
+                        <div class="page-title">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                                <li class="breadcrumb-item active">Home</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <!-- /# column -->
+            </div>
+            <!-- /# row -->
+            <section id="main-content">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="card">
+                            <div class="stat-widget-one">
+                                <div class="stat-icon dib"><i class="ti-money color-success border-success"></i></div>
+                                <div class="stat-content dib">
+                                    <div class="stat-text">Total Profit</div>
+                                    <div class="stat-digit">1,012</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card">
+                            <div class="stat-widget-one">
+                                <div class="stat-icon dib"><i class="ti-user color-primary border-primary"></i></div>
+                                <div class="stat-content dib">
+                                    <div class="stat-text">New Customer</div>
+                                    <div class="stat-digit">961</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card">
+                            <div class="stat-widget-one">
+                                <div class="stat-icon dib"><i class="ti-layout-grid2 color-pink border-pink"></i></div>
+                                <div class="stat-content dib">
+                                    <div class="stat-text">Active Projects</div>
+                                    <div class="stat-digit">770</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card">
+                            <div class="stat-widget-one">
+                                <div class="stat-icon dib"><i class="ti-link color-danger border-danger"></i></div>
+                                <div class="stat-content dib">
+                                    <div class="stat-text">Referral</div>
+                                    <div class="stat-digit">2,781</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="card">
+                            <div class="card-title">
+                                <h4>Fee Collections and Expenses</h4>
+
+                            </div>
+                            <div class="card-body">
+                                <div class="ct-bar-chart m-t-30"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="card">
+
+                            <div class="card-body">
+                                <div class="ct-pie-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="card bg-primary">
+                                    <div class="weather-widget">
+                                        <div id="weather-one" class="weather-one p-22"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="card">
+                                    <div class="testimonial-widget-one p-17">
+                                        <div class="testimonial-widget-one owl-carousel owl-theme">
+                                            <div class="item">
+                                                <div class="testimonial-content">
+                                                    <div class="testimonial-text">
+                                                        <i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                                        nostrud exercitation <i class="fa fa-quote-right"></i>
+                                                    </div>
+                                                    <img class="testimonial-author-img" src="assets/images/avatar/1.jpg" alt="" />
+                                                    <div class="testimonial-author">TYRION LANNISTER</div>
+                                                    <div class="testimonial-author-position">Founder-Ceo. Dell Corp</div>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <div class="testimonial-content">
+                                                    <div class="testimonial-text">
+                                                        <i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                                        nostrud exercitation <i class="fa fa-quote-right"></i>
+                                                    </div>
+                                                    <img class="testimonial-author-img" src="assets/images/avatar/1.jpg" alt="" />
+                                                    <div class="testimonial-author">TYRION LANNISTER</div>
+                                                    <div class="testimonial-author-position">Founder-Ceo. Dell Corp</div>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <div class="testimonial-content">
+                                                    <div class="testimonial-text">
+                                                        <i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                                        nostrud exercitation <i class="fa fa-quote-right"></i>
+                                                    </div>
+                                                    <img class="testimonial-author-img" src="assets/images/avatar/1.jpg" alt="" />
+                                                    <div class="testimonial-author">TYRION LANNISTER</div>
+                                                    <div class="testimonial-author-position">Founder-Ceo. Dell Corp</div>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <div class="testimonial-content">
+                                                    <div class="testimonial-text">
+                                                        <i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                                        nostrud exercitation <i class="fa fa-quote-right"></i>
+                                                    </div>
+                                                    <img class="testimonial-author-img" src="assets/images/avatar/1.jpg" alt="" />
+                                                    <div class="testimonial-author">TYRION LANNISTER</div>
+                                                    <div class="testimonial-author-position">Founder-Ceo. Dell Corp</div>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <div class="testimonial-content">
+                                                    <div class="testimonial-text">
+                                                        <i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                                        nostrud exercitation <i class="fa fa-quote-right"></i>
+                                                    </div>
+                                                    <img class="testimonial-author-img" src="assets/images/avatar/1.jpg" alt="" />
+                                                    <div class="testimonial-author">TYRION LANNISTER</div>
+                                                    <div class="testimonial-author-position">Founder-Ceo. Dell Corp</div>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <div class="testimonial-content">
+                                                    <div class="testimonial-text">
+                                                        <i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                                        nostrud exercitation <i class="fa fa-quote-right"></i>
+                                                    </div>
+                                                    <img class="testimonial-author-img" src="assets/images/avatar/1.jpg" alt="" />
+                                                    <div class="testimonial-author">TYRION LANNISTER</div>
+                                                    <div class="testimonial-author-position">Founder-Ceo. Dell Corp</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /# column -->
+                    <div class="col-lg-8">
+                        <div class="card">
+                            <div class="card-title pr">
+                                <h4>All Exam Result</h4>
+
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table student-data-table m-t-20">
+                                        <thead>
+                                            <tr>
+                                                <th><label><input type="checkbox" value=""></label>Exam Name</th>
+                                                <th>Subject</th>
+                                                <th>Grade Point</th>
+                                                <th>Percent Form</th>
+                                                <th>Percent Upto</th>
+                                                <th>Date</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Class Test</td>
+                                                <td>Mathmatics</td>
+                                                <td>
+                                                    4.00
+                                                </td>
+                                                <td>
+                                                    95.00
+                                                </td>
+                                                <td>
+                                                    100
+                                                </td>
+                                                <td>20/04/2017</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Class Test</td>
+                                                <td>Mathmatics</td>
+                                                <td>
+                                                    4.00
+                                                </td>
+                                                <td>
+                                                    95.00
+                                                </td>
+                                                <td>
+                                                    100
+                                                </td>
+                                                <td>20/04/2017</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Class Test</td>
+                                                <td>English</td>
+                                                <td>
+                                                    4.00
+                                                </td>
+                                                <td>
+                                                    95.00
+                                                </td>
+                                                <td>
+                                                    100
+                                                </td>
+                                                <td>20/04/2017</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Class Test</td>
+                                                <td>Bangla</td>
+                                                <td>
+                                                    4.00
+                                                </td>
+                                                <td>
+                                                    95.00
+                                                </td>
+                                                <td>
+                                                    100
+                                                </td>
+                                                <td>20/04/2017</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Class Test</td>
+                                                <td>Mathmatics</td>
+                                                <td>
+                                                    4.00
+                                                </td>
+                                                <td>
+                                                    95.00
+                                                </td>
+                                                <td>
+                                                    100
+                                                </td>
+                                                <td>20/04/2017</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Class Test</td>
+                                                <td>English</td>
+                                                <td>
+                                                    4.00
+                                                </td>
+                                                <td>
+                                                    95.00
+                                                </td>
+                                                <td>
+                                                    100
+                                                </td>
+                                                <td>20/04/2017</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Class Test</td>
+                                                <td>Mathmatics</td>
+                                                <td>
+                                                    4.00
+                                                </td>
+                                                <td>
+                                                    95.00
+                                                </td>
+                                                <td>
+                                                    100
+                                                </td>
+                                                <td>20/04/2017</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /# column -->
+                </div>
+                <!-- /# row -->
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="card p-0">
+                            <div class="stat-widget-three home-widget-three">
+                                <div class="stat-icon bg-facebook">
+                                    <i class="ti-facebook"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-digit">8,268</div>
+                                    <div class="stat-text">Likes</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card p-0">
+                            <div class="stat-widget-three home-widget-three">
+                                <div class="stat-icon bg-youtube">
+                                    <i class="ti-youtube"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-digit">12,545</div>
+                                    <div class="stat-text">Subscribes</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card p-0">
+                            <div class="stat-widget-three home-widget-three">
+                                <div class="stat-icon bg-twitter">
+                                    <i class="ti-twitter"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-digit">7,982</div>
+                                    <div class="stat-text">Tweets</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card p-0">
+                            <div class="stat-widget-three home-widget-three">
+                                <div class="stat-icon bg-danger">
+                                    <i class="ti-linkedin"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-digit">9,658</div>
+                                    <div class="stat-text">Followers</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="year-calendar"></div>
+                            </div>
+                        </div>
+                        <!-- /# card -->
+                    </div>
+                    <!-- /# column -->
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-title">
+                                <h4>Notice Board </h4>
+
+                            </div>
+                            <div class="recent-comment m-t-15">
+                                <div class="media">
+                                    <div class="media-left">
+                                        <a href="#"><img class="media-object" src="assets/images/avatar/1.jpg" alt="..."></a>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="media-heading color-primary">john doe</h4>
+                                        <p>Cras sit amet nibh libero, in gravida nulla.</p>
+                                        <p class="comment-date">10 min ago</p>
+                                    </div>
+                                </div>
+                                <div class="media">
+                                    <div class="media-left">
+                                        <a href="#"><img class="media-object" src="assets/images/avatar/2.jpg" alt="..."></a>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="media-heading color-success">Mr. John</h4>
+                                        <p>Cras sit amet nibh libero, in gravida nulla.</p>
+                                        <p class="comment-date">1 hour ago</p>
+                                    </div>
+                                </div>
+                                <div class="media">
+                                    <div class="media-left">
+                                        <a href="#"><img class="media-object" src="assets/images/avatar/3.jpg" alt="..."></a>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="media-heading color-danger">Mr. John</h4>
+                                        <p>Cras sit amet nibh libero, in gravida nulla.</p>
+                                        <div class="comment-date">Yesterday</div>
+                                    </div>
+                                </div>
+                                <div class="media">
+                                    <div class="media-left">
+                                        <a href="#"><img class="media-object" src="assets/images/avatar/1.jpg" alt="..."></a>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="media-heading color-primary">john doe</h4>
+                                        <p>Cras sit amet nibh libero, in gravida nulla.</p>
+                                        <p class="comment-date">10 min ago</p>
+                                    </div>
+                                </div>
+                                <div class="media">
+                                    <div class="media-left">
+                                        <a href="#"><img class="media-object" src="assets/images/avatar/2.jpg" alt="..."></a>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="media-heading color-success">Mr. John</h4>
+                                        <p>Cras sit amet nibh libero, in gravida nulla.</p>
+                                        <p class="comment-date">1 hour ago</p>
+                                    </div>
+                                </div>
+                                <div class="media no-border">
+                                    <div class="media-left">
+                                        <a href="#"><img class="media-object" src="assets/images/avatar/3.jpg" alt="..."></a>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="media-heading color-info">Mr. John</h4>
+                                        <p>Cras sit amet nibh libero, in gravida nulla.</p>
+                                        <div class="comment-date">Yesterday</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /# card -->
+                    </div>
+                    <!-- /# column -->
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-title">
+                                <h4>Timeline</h4>
+
+                            </div>
+                            <div class="card-body">
+                                <ul class="timeline">
+                                    <li>
+                                        <div class="timeline-badge primary"><i class="fa fa-smile-o"></i></div>
+                                        <div class="timeline-panel">
+                                            <div class="timeline-heading">
+                                                <h5 class="timeline-title">School promote video sharing</h5>
+                                            </div>
+                                            <div class="timeline-body">
+                                                <p>10 minutes ago</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="timeline-badge warning"><i class="fa fa-sun-o"></i></div>
+                                        <div class="timeline-panel">
+                                            <div class="timeline-heading">
+                                                <h5 class="timeline-title">Ready our school website and online service</h5>
+                                            </div>
+                                            <div class="timeline-body">
+                                                <p>20 minutes ago</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="timeline-badge danger"><i class="fa fa-times-circle-o"></i></div>
+                                        <div class="timeline-panel">
+                                            <div class="timeline-heading">
+                                                <h5 class="timeline-title">Routine pubish our website form 10/03/2017 </h5>
+                                            </div>
+                                            <div class="timeline-body">
+                                                <p>30 minutes ago</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="timeline-badge success"><i class="fa fa-check-circle-o"></i></div>
+                                        <div class="timeline-panel">
+                                            <div class="timeline-heading">
+                                                <h5 class="timeline-title">Principle quotation publish our website</h5>
+                                            </div>
+                                            <div class="timeline-body">
+                                                <p>15 minutes ago</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="timeline-badge warning"><i class="fa fa-sun-o"></i></div>
+                                        <div class="timeline-panel">
+                                            <div class="timeline-heading">
+                                                <h5 class="timeline-title">Class schedule publish our website</h5>
+                                            </div>
+                                            <div class="timeline-body">
+                                                <p>20 minutes ago</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- /# card -->
+                    </div>
+                </div>
+                <!-- /# row -->
+
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-title">
+                                <h4>Task</h4>
+
+                            </div>
+                            <div class="todo-list">
+                                <div class="tdl-holder">
+                                    <div class="tdl-content">
+                                        <ul>
+                                            <li>
+                                                <label>
+                                                <input type="checkbox"><i></i><span>22,Dec Publish The Final Exam Result</span>
+                                                <a href='#' class="ti-close"></a>
+                                            </label>
+                                            </li>
+                                            <li>
+                                                <label>
+                                                <input type="checkbox" checked><i></i><span>First Jan Start Our School</span>
+                                                <a href='#' class="ti-close"></a>
+                                            </label>
+                                            </li>
+                                            <li>
+                                                <label>
+                                                <input type="checkbox"><i></i><span>Recently Our Maganement Programme Start</span>
+                                                <a href='#' class="ti-close"></a>
+                                            </label>
+                                            </li>
+                                            <li>
+                                                <label>
+                                                <input type="checkbox" checked><i></i><span>Check out some Popular courses</span>
+                                                <a href='#' class="ti-close"></a>
+                                            </label>
+                                            </li>
+
+                                            <li>
+                                                <label>
+                                                <input type="checkbox" checked><i></i><span>First Jan Start Our School</span>
+                                                <a href='#' class="ti-close"></a>
+                                            </label>
+                                            </li>
+                                            <li>
+                                                <label>
+                                                <input type="checkbox" checked><i></i><span>Connect with one new person</span>
+                                                <a href='#' class="ti-close"></a>
+                                            </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <input type="text" class="tdl-new form-control" placeholder="Write new item and hit 'Enter'...">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="card">
+                            <div class="card-title pr">
+                                <h4>All Expense</h4>
+
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table student-data-table m-t-20">
+                                        <thead>
+                                            <tr>
+                                                <th><label><input type="checkbox" value=""></label>ID</th>
+                                                <th>Expense Type</th>
+                                                <th>Amount</th>
+                                                <th>Status</th>
+                                                <th>Email</th>
+                                                <th>Date</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><label><input type="checkbox" value=""></label>#2901</td>
+                                                <td>
+                                                    Salary
+                                                </td>
+                                                <td>
+                                                    $2000
+                                                </td>
+                                                <td>
+                                                    <span class="badge badge-primary">Paid</span>
+                                                </td>
+                                                <td>
+                                                    edumin@gmail.com
+                                                </td>
+                                                <td>
+                                                    10/05/2017
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><label><input type="checkbox" value=""></label>#2901</td>
+                                                <td>
+                                                    Salary
+                                                </td>
+                                                <td>
+                                                    $2000
+                                                </td>
+                                                <td>
+                                                    <span class="badge badge-warning">Pending</span>
+                                                </td>
+                                                <td>
+                                                    edumin@gmail.com
+                                                </td>
+                                                <td>
+                                                    10/05/2017
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><label><input type="checkbox" value=""></label>#2901</td>
+                                                <td>
+                                                    Salary
+                                                </td>
+                                                <td>
+                                                    $2000
+                                                </td>
+                                                <td>
+                                                    <span class="badge badge-primary">Paid</span>
+                                                </td>
+                                                <td>
+                                                    edumin@gmail.com
+                                                </td>
+                                                <td>
+                                                    10/05/2017
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><label><input type="checkbox" value=""></label>#2901</td>
+                                                <td>
+                                                    Salary
+                                                </td>
+                                                <td>
+                                                    $2000
+                                                </td>
+                                                <td>
+                                                    <span class="badge badge-danger">Due</span>
+                                                </td>
+                                                <td>
+                                                    edumin@gmail.com
+                                                </td>
+                                                <td>
+                                                    10/05/2017
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><label><input type="checkbox" value=""></label>#2901</td>
+                                                <td>
+                                                    Salary
+                                                </td>
+                                                <td>
+                                                    $2000
+                                                </td>
+                                                <td>
+                                                    <span class="badge badge-primary">Paid</span>
+                                                </td>
+                                                <td>
+                                                    edumin@gmail.com
+                                                </td>
+                                                <td>
+                                                    10/05/2017
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /# column -->
+                </div>
+
+
+            </section>
+        </div>
+    </div>
+</div>
 
 @endsection
