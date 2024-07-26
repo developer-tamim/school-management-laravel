@@ -8,7 +8,7 @@ Teachers
 - add
   - id
   - name
-  - occupation
+  - Position
   - date of birth
   - NID number
   - email
@@ -17,8 +17,10 @@ Teachers
   - family contact number
   - present & permanent address
 
+- view
+  - view details
+  - delete
 - edit
-- delete
 
 Students
 - list

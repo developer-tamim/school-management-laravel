@@ -12,7 +12,7 @@
                 <li class="label">Teachers</li>
                 <li><a class="sidebar-sub-toggle"><i class="ti-user"></i> Teachers <span class="sidebar-collapse-icon ti-angle-down"></span></a>
                     <ul>
-                        <li><a href="ui-typography.html">List</a></li>
+                        <li><a href="{{ route('teacher.index') }}">List</a></li>
                         <li><a href="ui-alerts.html">Add</a></li>
                     </ul>
                 </li>

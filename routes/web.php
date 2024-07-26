@@ -38,3 +38,4 @@ Route::get('/',[SchoolDashboard::class, 'index'])->name('school.dashboard');
 
 // Teacher routes
 Route::get('teachers',[TeachersController::class, 'index'])->name('teacher.index');
+Route::get('teachers/add',[TeachersController::class, 'create'])->name('teacher.add');

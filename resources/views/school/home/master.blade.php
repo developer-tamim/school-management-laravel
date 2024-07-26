@@ -30,6 +30,9 @@
         <link href="{{asset('assets/css/lib/bootstrap.min.css')}}" rel="stylesheet">
         <link href="{{asset('assets/css/lib/helper.css')}}" rel="stylesheet">
         <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
+        <!-- data table -->
+    <link href="assets/css/lib/data-table/buttons.bootstrap.min.css" rel="stylesheet" />
+
     </head>
 
     <body>
@@ -85,6 +88,24 @@
         <script src="{{asset('assets/js/lib/owl-carousel/owl.carousel-init.js')}}"></script>
         <script src="{{asset('assets/js/scripts.js')}}"></script>
         <!-- scripit init-->
+
+
+        <!-- data table-->
+        <script src="{{asset('assets/js/lib/data-table/datatables.min.js')}}"></script>
+    <script src="{{asset('assets/js/lib/data-table/buttons.dataTables.min.js')}}"></script>
+    <script src="{{asset('assets/js/lib/data-table/dataTables.buttons.min.js')}}"></script>
+    <script src="assets/js/lib/data-table/buttons.flash.min.js"></script>
+    <script src="{{asset('assets/js/lib/data-table/jszip.min.js')}}"></script>
+    <script src="{{asset('assets/js/lib/data-table/pdfmake.min.js')}}"></script>
+    <script src="{{asset('assets/js/lib/data-table/vfs_fonts.js')}}"></script>
+    <script src="{{asset('assets/js/lib/data-table/buttons.html5.min.js')}}"></script>
+    <script src="{{asset('assets/js/lib/data-table/buttons.print.min.js')}}"></script>
+    <script src="{{asset('assets/js/lib/data-table/datatables-init.js')}}"></script>
+
+    <!-- Required vendors -->
+    <script src="./vendor/global/global.min.js"></script>
+    <script src="./js/quixnav-init.js"></script>
+    <script src="./js/custom.min.js"></script>
     </body>
 
 </html>
