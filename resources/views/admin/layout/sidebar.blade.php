@@ -31,7 +31,7 @@
           <li class="nav-item active">
             <a
               data-bs-toggle="collapse"
-              href="#dashboard"
+              href="{{ route('admin.index') }}"
               class="collapsed"
               aria-expanded="false"
             >
@@ -86,7 +86,7 @@
             <div class="collapse" id="sidebarLayouts">
               <ul class="nav nav-collapse">
                 <li>
-                  <a href="sidebar-style-2.html">
+                  <a href="{{ route('student.index') }}">
                     <span class="sub-item">List</span>
                   </a>
                 </li>

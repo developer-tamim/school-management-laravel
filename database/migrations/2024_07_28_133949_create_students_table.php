@@ -13,6 +13,24 @@ return new class extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('class');
+            $table->string('group');
+            $table->integer('roll');
+            $table->integer('registration');
+            $table->string('email');
+            $table->string('contact');
+            $table->date('dob');
+            $table->integer('nid');
+            $table->date('admission_date');
+            $table->integer('passing_year');
+            $table->float('cgpa');
+            $table->string('father_name');
+            $table->string('father_contact');
+            $table->string('mother_name');
+            $table->string('mother_contact');
+            $table->longText('present_address');
+            $table->longText('permanent_address');
             $table->timestamps();
         });
     }
@@ -25,3 +43,16 @@ return new class extends Migration
         Schema::dropIfExists('students');
     }
 };
+
+//   - id
+//   - name
+//   - roll
+//   - registration
+//   - email
+//   - contact
+//   - father & mother name
+//   - family contact number
+//   - present & permanent address
+//   - admission date
+//   - passing year
+//   - cgpa

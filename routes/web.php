@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +21,6 @@ use Illuminate\Support\Facades\Route;
 
 // Admin route
 Route::get('/', [AdminController::class, 'index'])->name('admin.index');
+
+// Student route
+Route::get('/student', [StudentController::class, 'index'])->name('student.index');
