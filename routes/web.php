@@ -24,3 +24,4 @@ Route::get('/', [AdminController::class, 'index'])->name('admin.index');
 
 // Student route
 Route::get('/student', [StudentController::class, 'index'])->name('student.index');
+Route::get('/student/create', [StudentController::class, 'create'])->name('student.create');

@@ -30,14 +30,15 @@
           <div class="card">
             <div class="card-header">
               <div class="d-flex align-items-center">
-                <h4 class="card-title">Add Row</h4>
-                <button
+                <h4 class="card-title">Students Table</h4>
+                <a
+                href="{{ route('student.create') }}"
                   class="btn btn-primary btn-round ms-auto"
 
                 >
                   <i class="fa fa-plus"></i>
-                  Add Row
-                </button>
+                  New Student
+                </a>
               </div>
             </div>
             <div class="card-body">
@@ -140,8 +141,8 @@
                       <th>SL</th>
                       <th>Name</th>
                       <th>Roll</th>
-                      <th>Class</th>
-                      <th>Registration</th>
+                      <th>Semester</th>
+                      <th>Department</th>
                       <th style="width: 10%">Action</th>
                     </tr>
                   </thead>
@@ -149,9 +150,31 @@
                     <tr>
                       <td>1</td>
                       <td>John Wick</td>
-                      <td>123</td>
-                      <td>10th</td>
-                      <td>1234567890</td>
+                      <td>123456</td>
+                      <td>5th semester</td>
+                      <td>CSE</td>
+                      <td>
+                        <div class="form-button-action">
+                          <button
+                            type="button"
+                            title=""
+                            class="btn btn-link btn-primary btn-lg"
+                            data-original-title="Edit Task"
+                            data-bs-toggle="modal"
+                            data-bs-target="#addRowModal"
+                          >
+                            <i class="fa fa-edit"></i>
+                          </button>
+
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>Bob</td>
+                      <td>123457</td>
+                      <td>4th semester</td>
+                      <td>EEE</td>
                       <td>
                         <div class="form-button-action">
                           <button
